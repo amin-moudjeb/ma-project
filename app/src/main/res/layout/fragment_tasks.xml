@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="Tasks"
+            android:text="@string/tasks_title"
             android:textColor="#685455"
             android:textSize="32sp"
             android:textStyle="bold"
@@ -66,7 +66,7 @@
                 android:background="@android:color/transparent"
                 android:drawableStart="@drawable/baseline_search_24"
                 android:ems="10"
-                android:hint="Search tasks..."
+                android:hint="@string/search_placeholder"
                 android:inputType="text"
                 android:padding="5dp" />
 
@@ -97,7 +97,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="#ffa7ab"
                     android:minWidth="80dp"
-                    android:text="all"
+                    android:text="@string/chip1"
                     android:textColor="#3E3C3C"
                     app:cornerRadius="8dp" />
 
@@ -109,7 +109,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="#ffa7ab"
                     android:minWidth="80dp"
-                    android:text="study"
+                    android:text="@string/chip2"
                     android:textColor="#403E3E"
                     app:cornerRadius="8dp" />
 
@@ -121,7 +121,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="#ffa7ab"
                     android:minWidth="80dp"
-                    android:text="work"
+                    android:text="@string/chip3"
                     android:textColor="#3E3C3C"
                     app:cornerRadius="8dp" />
 
@@ -133,7 +133,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="#ffa7ab"
                     android:minWidth="80dp"
-                    android:text="personal"
+                    android:text="@string/chip4"
                     android:textColor="#434141"
                     app:cornerRadius="8dp" />
 
@@ -145,7 +145,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="#ffa7ab"
                     android:minWidth="80dp"
-                    android:text="shopping"
+                    android:text="@string/chip5"
                     android:textColor="#403E3E"
                     app:cornerRadius="8dp" />
 

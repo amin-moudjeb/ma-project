@@ -5,13 +5,13 @@
     <item
         android:id="@+id/tasksFragment"
         android:icon="@drawable/square_check_regular_full"
-        android:title="Tasks" />
+        android:title="@string/menu1" />
     <item
         android:id="@+id/historyfragment"
         android:icon="@drawable/clock_rotate_left_solid_full"
-        android:title="History" />
+        android:title="@string/menu2" />
     <item
         android:id="@+id/settingsfragment"
         android:icon="@drawable/gear_solid_full"
-        android:title="Settings" />
+        android:title="@string/menu3" />
 </menu>
