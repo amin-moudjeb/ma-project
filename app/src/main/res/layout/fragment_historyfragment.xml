@@ -19,7 +19,7 @@
             android:layout_marginTop="15dp"
             android:backgroundTint="#ffeeee"
             android:orientation="horizontal"
-            android:weightSum="2"
+            android:weightSum="3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2">
@@ -44,6 +44,17 @@
                 android:layout_weight="1"
                 android:backgroundTint="#ffa7ab"
                 android:text="archived"
+                android:textColor="#6D3434"
+                app:cornerRadius="8dp" />
+
+            <Button
+                android:id="@+id/button15"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#ffa7ab"
+                android:text="trash"
                 android:textColor="#6D3434"
                 app:cornerRadius="8dp" />
         </LinearLayout>
