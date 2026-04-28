@@ -1,6 +1,9 @@
 package com.example.aaa;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,21 +23,23 @@ public class loginActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        //not auto gen3
-        // 1. Find the button
-        android.widget.Button loginBtn = findViewById(R.id.loginbtn); // Change R.id.button if your ID is different!
 
-// 2. Make it click
-        loginBtn.setOnClickListener(new android.view.View.OnClickListener() {
-            @Override
-            public void onClick(android.view.View v) {
-                // 3. Create the Intent to switch to MainActivity
+        EditText email = findViewById(R.id.emailTV);
+        EditText password = findViewById(R.id.passTV);
+        Button loginBtn = findViewById(R.id.loginbtn);
+
+        loginBtn.setOnClickListener(v ->{
+            String defMail = "a@gmail.com";
+            String defPass = "123456";
+            if(email.getText().toString().equals(defMail) && password.getText().toString().equals(defPass)){
                 android.content.Intent intent = new android.content.Intent(loginActivity.this, MainActivity.class);
+               intent.putExtra("email", email.getText().toString());
                 startActivity(intent);
 
-                // 4. Destroy the login screen so they can't hit the "Back" arrow to return here!
-                finish();
             }
-        });
+            else{
+                Toast.makeText(loginActivity.this, "Wrong email or password", Toast.LENGTH_SHORT).show();
+            }
+            });
+        }
     }
-}

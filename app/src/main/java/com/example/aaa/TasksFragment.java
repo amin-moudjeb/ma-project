@@ -3,10 +3,17 @@ package com.example.aaa;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,30 +56,38 @@ public class TasksFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
-//not auto generated 2
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // 1. Create a View object from your design
+
+
+
         View view = inflater.inflate(R.layout.fragment_tasks, container, false);
 
-        // 2. Find the Floating Action Button by its ID
-        com.google.android.material.floatingactionbutton.FloatingActionButton fab = view.findViewById(R.id.floatingActionButton);
+        FloatingActionButton fab = view.findViewById(R.id.floatingActionButton);
+        fab.setOnClickListener(v -> {
+            androidx.navigation.Navigation.findNavController(v).navigate(R.id.action_tasksFragment_to_addTaskFragment);
 
-        // 3. Tell it what to do when clicked
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // This triggers the arrow you drew in the Nav Graph!
-                androidx.navigation.Navigation.findNavController(v).navigate(R.id.action_tasksFragment_to_addTaskFragment);
-            }
         });
+        RecyclerView noteList = view.findViewById(R.id.noteList);
 
-        // 4. Show the view
+        List<note> notes = new ArrayList<>();
+        notes.add(new note("note1"));
+        notes.add(new note("note2"));
+        notes.add(new note("note3"));
+
+        noteAdapter adapter = new noteAdapter(notes);
+
+        noteList.setAdapter(adapter);
+        noteList.setLayoutManager(new LinearLayoutManager(getContext()));
+
         return view;
+
     }
 }

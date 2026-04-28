@@ -7,6 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,18 +25,12 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        // --- THE MAGIC SPELL CODE GOES HERE ---
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        // 1. Find the Bottom Navigation Bar
-        com.google.android.material.bottomnavigation.BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        NavHostFragment navHostFragment = (androidx.navigation.fragment.NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
 
-        // 2. Find the empty Fragment Container (the blank board holding your screens)
-        androidx.navigation.fragment.NavHostFragment navHostFragment = (androidx.navigation.fragment.NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
+        NavController navController = navHostFragment.getNavController();
 
-        // 3. Get the "GPS Controller" from that container
-        androidx.navigation.NavController navController = navHostFragment.getNavController();
-
-        // 4. Wire the Bottom Navigation Bar and the GPS Controller together!
         androidx.navigation.ui.NavigationUI.setupWithNavController(bottomNavigationView, navController);
     }
 }
