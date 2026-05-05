@@ -32,7 +32,7 @@
                 app:buttonIconTint="#ffa7ab" />
 
             <TextView
-                android:id="@+id/noteHead"
+                android:id="@+id/taskTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
